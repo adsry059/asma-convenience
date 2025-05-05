@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap" rel="stylesheet">
+  <title>Asma' Convenience - Products</title>
+  <link rel="stylesheet" href="asmaconvenience.css" />
+</head>
+<body>
+  <div class="header">
+    <div class="logo">ASMA’ CONVENIENCE</div>
+    <nav class="nav-links">
+      <a href="asmaconvenience.html">home</a>
+      <div class="dropdown">
+        <a href="#">categories</a>
+        <div class="dropdown-content">
+          <a href="#">Dairy & Eggs</a>
+          <a href="#">Bakery & Breakfast</a>
+          <a href="#">Noodles & Pasta</a>
+          <a href="#">Cooking & Condiments</a>
+          <a href="#">Beverages</a>
+          <a href="#">Snacks</a>
+          <a href="#">Cleaning & Laundry</a>
+          <a href="#">Beauty, Health & Personal Care</a>
+        </div>
+      </div>
+      <a href="products.html">products</a>
+      <a href="#">services</a>
+      <a href="#">payment</a>
+      <a href="#">contact us</a>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <a href="#">Dairy & Eggs</a>
+      <a href="#">Bakery & Breakfast</a>
+      <a href="#">Noodles & Pasta</a>
+      <a href="#">Cooking & Condiments</a>
+      <a href="#">Beverages</a>
+      <a href="#">Snacks</a>
+      <a href="#">Cleaning & Laundry</a>
+      <a href="#">Beauty, Health & Personal Care</a>
+    </div>
+
+  <div class="products-section">
+    <h1>PRODUCTS</h1>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+
+  <script>
+  fetch('products.json')
+    .then(response => response.json())
+    .then(products => {
+      const productGrid = document.getElementById('productGrid');
+      products.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <button class="add-btn">
+            <span class="price">${product.price}</span>
+            <span class="spacer"></span>
+            <span class="plus">+</span>
+          </button>
+        `;
+        productGrid.appendChild(card);
+      });
+    })
+    .catch(error => console.error('Error loading products:', error));
+</script>
+
+  
+</body>
+</html>
+
