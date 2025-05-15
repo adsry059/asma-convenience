@@ -165,7 +165,7 @@
 
 .sidebar {
     width: 250px;
-    background: rgba(255, 255, 255, 0.9);
+    background: black;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -173,19 +173,18 @@
 }
 
 .sidebar a {
-    color: #0056b3;
+    color: white;
     padding: 15px 10px;
     text-decoration: none;
     font-weight: bolder;
     font-size: larger;
     transition: background 0.3s;
-    border-bottom: 10px solid #ccc;
     padding-bottom: 20px;
   }
   
   .sidebar a:hover {
-    background: #f0f0f0;
-    color: #003366;
+    background: black;
+    color: #fed000;
   }
 
   .products-section {
@@ -198,7 +197,7 @@
     font-size: 36px;
     margin-bottom: 30px;
     text-align: center;
-    color: #37fd12;
+    color: #fed000;
   }
   
   .product-grid {
