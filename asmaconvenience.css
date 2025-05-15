@@ -7,7 +7,7 @@
   
   body {
     font-family: 'Baloo Bhaijaan 2', cursive;
-    background: url('Copy of Web Tech Project Proposal Presentation.png') no-repeat center center fixed;
+    background: url('background.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
   }
@@ -34,6 +34,12 @@
     -webkit-text-fill-color: #ffd700;
   }
 
+  .logo-img {
+    height: 50px;
+    width: auto;
+    vertical-align: middle;
+  }  
+
   .logo:hover {
     background: linear-gradient(90deg, #ff6ec7, #63c5da);
     background-clip: text;
@@ -54,9 +60,8 @@
   }
 
   .nav-links a:hover {
-    color: #0056b3;
-    text-shadow: 0 0 1px #0056b3;
-    background-color: white;
+    color: #fed000;
+    text-shadow: 0 0 1px #fed000;
   }
   
   .nav-links {
@@ -74,7 +79,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: white;
+    background-color: black;
     min-width: 200px;
     z-index: 1;
     flex-direction: column;
@@ -82,19 +87,19 @@
   }
   
   .dropdown-content a {
-    color: #0056b3;
+    color: white;
     padding: 10px 15px;
     text-decoration: none;
     display: block;
     font-weight: bold;
   }
   
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-  
   .dropdown:hover .dropdown-content {
     display: flex;
+  }
+
+  .dropdown-content a:hover {
+    color: #fed000;
   }
   
   .hero {
@@ -106,6 +111,7 @@
   }
   
   .content h1 {
+    color: #fed000;
     font-size: 50px;
     font-weight: 700;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -113,13 +119,13 @@
   }
   
   .highlight {
-    color: #37fd12;
+    color: #fed000;
     transition: all 0.3s ease;
     display: inline-block;
   }
 
   .highlight:hover {
-    color: #7fff00;
+    color: #ffff00;
     transform: scale(1.05);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
   }
