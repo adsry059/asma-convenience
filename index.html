@@ -42,17 +42,78 @@
     </nav>
   </div>
 
-  <div class="hero">
-    <div class="content">
-      <h1>WELCOME TO <span class="highlight">ASMA’ CONVENIENCE</span></h1>
-      <p>Located in Mahallah Asma, IIUM, we’re here to serve your daily needs with convenience and care.</p>
-      <div class="hours">
-        <span class="icon">🕒</span>
-        <div class="time-text">
-            <div>Mon - Fri: 8AM - 12AM</div>
-            <div>Sat & Sun: 9AM - 12AM</div>
-        </div>
-      </div>
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <img src="asmaconvenience.png" class="banner-img" alt="Asma Convenience">
     </div>
+  
+    <div class="mySlides fade">
+      <img src="banner1.jpg" class="banner-img" alt="Promo 1">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="banner2.jpg" class="banner-img" alt="Promo 2">
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="banner3.jpg" class="banner-img" alt="Promo 3">
+    </div>
+  
+    <!-- Navigation arrows -->
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
+  
+  <!-- Dots -->
+  <div style="text-align:center; margin-top: 10px;">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div>
+  
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    // Dot controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    // Main function
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+    
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+    
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+      }
+    
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].classList.add("active");
+    }
+    
+    // Optional: Auto-slide
+    setInterval(() => {
+      plusSlides(1);
+    }, 5000);
+    </script>
+    
+  
 </body>
 </html>
